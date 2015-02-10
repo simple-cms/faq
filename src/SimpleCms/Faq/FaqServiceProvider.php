@@ -1,7 +1,6 @@
 <?php namespace SimpleCms\Faq;
 
 use Illuminate\Support\ServiceProvider;
-use SimpleCms\Faq\Faq;
 
 class FaqServiceProvider extends ServiceProvider {
 
