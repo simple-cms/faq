@@ -14,7 +14,6 @@ class CreateFaqsTable extends Migration {
     Schema::create('faqs', function($table)
     {
       $table->increments('id');
-      $table->integer('category_id')->references('id')->on('category');
       $table->string('slug', 80)->unique();
       $table->string('meta_title', 70)->unique();
       $table->string('meta_description', 155)->unique();

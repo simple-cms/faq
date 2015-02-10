@@ -1,8 +1,6 @@
 <?php namespace SimpleCms\Faq;
 
 use SimpleCms\Core\BaseController;
-use SimpleCms\Faq\Category\RepositoryInterface as CategoryRepositoryInterface;
-use View;
 use Redirect;
 
 class AdminController extends BaseController {
@@ -34,7 +32,7 @@ class AdminController extends BaseController {
    */
   public function index()
   {
-    return View::make('faq::Admin/Faq/Index', [
+    return view('faq::Admin/Index', [
       'models' => $this->faq->all()
     ]);
   }
@@ -46,7 +44,7 @@ class AdminController extends BaseController {
    */
   public function create()
   {
-    return View::make('faq::Admin/Faq/Form', []);
+    return view('faq::Admin/Form', []);
   }
 
   /**
@@ -71,7 +69,7 @@ class AdminController extends BaseController {
    */
   public function edit($id)
   {
-    return View::make('faq::Admin/Faq/Form', [
+    return view('faq::Admin/Form', [
       'model' => $this->faq->getById($id)
     ]);
   }
