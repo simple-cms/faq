@@ -4,7 +4,15 @@ use SimpleCms\Core\BaseModel;
 
 class Faq extends BaseModel {
 
-  protected $fillable = [];
+  protected $fillable = [
+    'category_id',
+    'slug',
+    'meta_title',
+    'meta_description',
+    'title',
+    'excerpt',
+    'content'
+  ];
 
   public function category()
   {

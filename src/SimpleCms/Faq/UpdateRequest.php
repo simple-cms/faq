@@ -1,8 +1,8 @@
-<?php namespace SimpleCms\Blog\Post;
+<?php namespace SimpleCms\Faq;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateRequest extends FormRequest {
+class UpdateRequest extends FormRequest {
 
 	/**
 	 * Get the validation rules that apply to the request.
@@ -13,9 +13,7 @@ class CreateRequest extends FormRequest {
 	{
 		return [
       'id' => 'numeric',
-      'author_id' => 'numeric|required',
-      'category_id' => 'numeric|required',
-      'status' => 'numeric|required',
+      'hidden' => 'numeric|required',
       'slug' => 'alpha_dash|max:80',
       'meta_title' => 'max:70',
       'meta_description' => 'max:155',
