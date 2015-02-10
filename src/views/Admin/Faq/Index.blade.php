@@ -23,7 +23,7 @@
           <ul class="nav nav-tabs pull-right">
             <li><a href="#help" data-toggle="tab">{{ trans('core::core.help') }}</a></li>
             <li class="active"><a href="#basic" data-toggle="tab">{{ trans('faq::faq.plural') }}</a></li>
-            <li class="pull-left header"><i class="fa fa-envelope"></i> {{ trans('faq::faq.singular') }} {{ trans('core::core.list') }}</li>
+            <li class="pull-left header"><i class="fa fa-question"></i> {{ trans('faq::faq.singular') }} {{ trans('core::core.list') }}</li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
               {{ trans('core::core.actions') }} <span class="caret"></span>

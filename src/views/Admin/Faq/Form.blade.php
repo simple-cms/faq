@@ -24,7 +24,7 @@
             <li><a href="#info" data-toggle="tab">{{ trans('core::core.info')}}</a></li>
             <li><a href="#seo" data-toggle="tab">{{ trans('core::core.seo')}}</a></li>
             <li class="active"><a href="#basic" data-toggle="tab">{{ trans('core::core.basics')}}</a></li>
-            <li class="pull-left header"><i class="fa fa-envelope"></i> {{ isset($model) ? trans('core::core.editing', ['model' => trans('faq::faq.singular'), 'name' => $model->title]) : trans('core::core.create') .' '. trans('faq::faq.singular') }}</li>
+            <li class="pull-left header"><i class="fa fa-question"></i> {{ isset($model) ? trans('core::core.editing', ['model' => trans('faq::faq.singular'), 'name' => $model->title]) : trans('core::core.create') .' '. trans('faq::faq.singular') }}</li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
               {{ trans('core::core.actions')}} <span class="caret"></span>
