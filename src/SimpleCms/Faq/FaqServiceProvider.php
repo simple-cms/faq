@@ -1,8 +1,7 @@
 <?php namespace SimpleCms\Faq;
 
 use Illuminate\Support\ServiceProvider;
-use SimpleCms\Faq\Faq\Faq;
-use SimpleCms\Faq\Category\Category;
+use SimpleCms\Faq\Faq;
 
 class FaqServiceProvider extends ServiceProvider {
 
@@ -20,9 +19,21 @@ class FaqServiceProvider extends ServiceProvider {
    */
   public function boot()
   {
-    $this->package('simple-cms/faq');
+    // Register our package views
+    $this->loadViewsFrom(__DIR__.'/../../views', 'faq');
 
-    require __DIR__.'/../../routes.php';
+    // Register our package translation files
+    $this->loadTranslationsFrom(__DIR__.'/../../lang', 'faq');
+
+    // Register the files our package should publish
+    $this->publishes([
+      // Publish our views
+      __DIR__.'/../../views' => base_path('resources/views/vendor/faq'),
+      // Publish our config
+      __DIR__.'/../../config/faq.php' => config_path('faq.php'),
+    ]);
+
+    require_once __DIR__ .'/../../routes.php';
   }
 
   /**
@@ -32,13 +43,9 @@ class FaqServiceProvider extends ServiceProvider {
    */
   public function register()
   {
-    $this->app->bind('\SimpleCms\Faq\Faw\RepositoryInterface', function($app)
+    $this->app->bind('\SimpleCms\Faq\RepositoryInterface', function($app)
     {
-      return new \SimpleCms\Blog\Post\EloquentRepository(new Post);
-    });
-    $this->app->bind('\SimpleCms\Blog\Category\RepositoryInterface', function($app)
-    {
-      return new \SimpleCms\Blog\Category\EloquentRepository(new Category);
+      return new \SimpleCms\Faq\EloquentRepository(new Faq);
     });
   }
 

@@ -1,4 +1,4 @@
-<?php namespace SimpleCms\Blog\Post;
+<?php namespace SimpleCms\Faq;
 
 use Illuminate\Database\Eloquent\Model;
 use SimpleCms\Core\AbstractEloquentRepository;

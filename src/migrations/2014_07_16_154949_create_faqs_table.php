@@ -32,7 +32,7 @@ class CreateFaqsTable extends Migration {
    */
   public function down()
   {
-    Schema::dropIfExists('faq_categories');
+    Schema::dropIfExists('faqs');
   }
 
 }

@@ -1,6 +1,6 @@
-<?php namespace SimpleCms\Blog\Post;
+<?php namespace SimpleCms\Faq;
 
-use SimpleCms\Blog\Post\RepositoryInterface;
+use SimpleCms\Faq\RepositoryInterface;
 use SimpleCms\Core\BaseController;
 use View;
 
