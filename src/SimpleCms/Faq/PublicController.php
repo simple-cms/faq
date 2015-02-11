@@ -2,31 +2,30 @@
 
 use SimpleCms\Faq\RepositoryInterface;
 use SimpleCms\Core\BaseController;
-use View;
 
 class PublicController extends BaseController {
 
   /**
    * Store our RepositoryInterface implementation.
    *
-   * @var Simple\Blog\Post\RepositoryInterface
+   * @var Simple\Faq\RepositoryInterface
    */
-  protected $post;
+  protected $faq;
 
   /**
    * Set up the class
    *
-   * @param Simple\Blog\Post\RepositoryInterface $posts
+   * @param Simple\Faq\RepositoryInterface $faq
    *
    * @return void
    */
-  public function __construct(RepositoryInterface $post)
+  public function __construct(RepositoryInterface $faq)
   {
     // Call the parent constructor just in case
     parent::__construct();
 
     // Set up our Model Interface
-    $this->post = $post;
+    $this->faq = $faq;
   }
 
   /**
@@ -36,10 +35,10 @@ class PublicController extends BaseController {
    */
   public function index()
   {
-    return View::make('blog::Public/Post/Index', [
+    return view('faq::Public.Index', [
       'metaTitle' => 'Home page title',
       'metaDesciption' => 'Home page description',
-      'posts' => $this->post->paginate()
+      'models' => $this->faq->paginate()
     ]);
   }
 
@@ -50,10 +49,10 @@ class PublicController extends BaseController {
    */
   public function show($slug)
   {
-    return View::make('blog::Public/Post/Show', [
+    return view('faq::Public.Show', [
       'metaTitle' => 'slug page title',
       'metaDesciption' => 'slug page description',
-      'post' => $this->post->getFirstBy('slug', $slug)
+      'model' => $this->faq->getFirstBy('slug', $slug)
     ]);
   }
 
